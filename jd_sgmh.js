@@ -10,12 +10,12 @@
 ============Quantumultx===============
 [task_local]
 #闪购盲盒
-20 8 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_sgmh.js, tag=闪购盲盒, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+30 2 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_sgmh.js, tag=闪购盲盒, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 ================Loon==============
 [Script]
-cron "20 8 * * *" script-path=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_sgmh.js, tag=闪购盲盒
+cron "30 2 * * *" script-path=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_sgmh.js, tag=闪购盲盒
 ===============Surge=================
-闪购盲盒 = type=cron,cronexp="20 8 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_sgmh.js
+闪购盲盒 = type=cron,cronexp="30 2 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_sgmh.js
 ============小火箭=========
 闪购盲盒 = type=cron,script-path=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_sgmh.js, cronexpr="20 8 * * *", timeout=3600, enable=true
  */
