@@ -84,11 +84,11 @@ if ($.isNode()) {
       await $.wait(2000);
     }
   }
-  let res = await getAuthorShareCode('')
+  let res = await getAuthorShareCode('https://raw.githubusercontent.com/Aaron-lv/updateTeam/master/shareCodes/cfd.json')
   if (!res) {
-    $.http.get({url: ''}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
+    $.http.get({url: 'https://purge.jsdelivr.net/gh/Aaron-lv/updateTeam@master/shareCodes/cfd.json'}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
     await $.wait(1000)
-    res = await getAuthorShareCode('')
+    res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/Aaron-lv/updateTeam@master/shareCodes/cfd.json')
   }
   $.strMyShareIds = [...(res && res.shareId || [])]
   await shareCodesFormat()
@@ -1490,6 +1490,7 @@ function taskListUrl(function_path, body = '', bizCode = 'jxbfd') {
       "Host": "m.jingxi.com",
       "Accept": "*/*",
       "Accept-Encoding": "gzip, deflate, br",
+      "User-Agent": UA,
       "Accept-Language": "zh-CN,zh-Hans;q=0.9",
       "Referer": "https://st.jingxi.com/",
       "Cookie": cookie
@@ -1549,7 +1550,7 @@ function readShareCode() {
         resolve(data);
       }
     })
-    await $.wait(10000);
+    await $.wait(30 * 1000);
     resolve()
   })
 }
@@ -1583,7 +1584,7 @@ function uploadShareCode(code) {
         resolve(data);
       }
     })
-    await $.wait(10000);
+    await $.wait(30 * 1000);
     resolve()
   })
 }
